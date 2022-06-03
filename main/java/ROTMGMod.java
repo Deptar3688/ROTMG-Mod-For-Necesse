@@ -7,10 +7,17 @@ import gfx.gameTexture.GameTexture;
 import inventory.recipe.Ingredient;
 import inventory.recipe.Recipe;
 import inventory.recipe.Recipes;
+import level.gameObject.ModularCarpetObject;
+import level.gameObject.WallObject;
 import level.maps.biomes.Biome;
 import rotmg.items.swords.KnightOfOryxSword;
+import rotmg.level.gameTile.*;
 import rotmg.mobs.hostile.HumantestMob;
 import rotmg.mobs.hostile.KnightOfOryxMob;
+
+import java.awt.*;
+
+import static engine.registries.ObjectRegistry.getObject;
 
 @ModEntry
 public class ROTMGMod {
@@ -18,11 +25,15 @@ public class ROTMGMod {
     public void init() {
 
         // Register tiles ----------------------------------------------------------------------
-
+        TileRegistry.registerTile("darkwatertile", new DarkWaterTile(), 1, false);
+        TileRegistry.registerTile("darksandtile", new DarkSandTile(), 1, true);
+        TileRegistry.registerTile("darkgrasstile", new DarkGrassTile(), 1, true);
         //
 
         // Register objects ----------------------------------------------------------------------
-
+        ObjectRegistry.registerObject("redcarpet", new ModularCarpetObject("redcarpet", new Color(96, 23, 13)), 25.0F, true);
+        int[] castleWallIDs = WallObject.registerWallObjects("castle", "castlewall", 1, new Color(94, 95, 109), 10.0F, 20.0F);
+        WallObject castleWall = (WallObject)getObject(castleWallIDs[0]);
         //
 
         // Register items ----------------------------------------------------------------------
