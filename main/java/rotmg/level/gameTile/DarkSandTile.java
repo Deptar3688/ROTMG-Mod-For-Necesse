@@ -1,13 +1,13 @@
 package rotmg.level.gameTile;
 
-import engine.util.GameRandom;
-import gfx.gameTexture.GameTexture;
-import gfx.gameTexture.GameTextureSection;
+import necesse.engine.util.GameRandom;
+import necesse.gfx.gameTexture.GameTexture;
+import necesse.gfx.gameTexture.GameTextureSection;
 import java.awt.Color;
 import java.awt.Point;
 
-import level.gameTile.TerrainSplatterTile;
-import level.maps.Level;
+import necesse.level.gameTile.TerrainSplatterTile;
+import necesse.level.maps.Level;
 
 public class DarkSandTile extends TerrainSplatterTile {
     private GameTexture texture;

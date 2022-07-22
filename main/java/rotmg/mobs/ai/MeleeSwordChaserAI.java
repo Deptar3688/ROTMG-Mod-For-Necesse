@@ -5,15 +5,15 @@
 
 package rotmg.mobs.ai;
 
-import engine.util.gameAreaSearch.GameAreaStream;
-import entity.mobs.GameDamage;
-import entity.mobs.Mob;
-import entity.mobs.ai.behaviourTree.composites.SequenceAINode;
-import entity.mobs.ai.behaviourTree.leaves.ChaserAINode;
-import entity.mobs.ai.behaviourTree.leaves.TargetFinderAINode;
-import entity.mobs.ai.behaviourTree.leaves.WandererAINode;
-import entity.mobs.ai.behaviourTree.util.TargetFinderDistance;
-import entity.mobs.hostile.pirates.PirateMob;
+import necesse.engine.util.gameAreaSearch.GameAreaStream;
+import necesse.entity.mobs.GameDamage;
+import necesse.entity.mobs.Mob;
+import necesse.entity.mobs.ai.behaviourTree.composites.SequenceAINode;
+import necesse.entity.mobs.ai.behaviourTree.leaves.ChaserAINode;
+import necesse.entity.mobs.ai.behaviourTree.leaves.TargetFinderAINode;
+import necesse.entity.mobs.ai.behaviourTree.leaves.WandererAINode;
+import necesse.entity.mobs.ai.behaviourTree.util.TargetFinderDistance;
+import necesse.entity.mobs.hostile.pirates.PirateMob;
 import java.awt.Point;
 
 public class MeleeSwordChaserAI<T extends Mob> extends SequenceAINode<T> {

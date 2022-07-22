@@ -4,27 +4,27 @@ package rotmg.level.gameTile;
 import necesse.engine.util.GameRandom;
 import necesse.gfx.gameTexture.GameTexture;
 import necesse.gfx.gameTexture.GameTextureSection;
-import java.awt.Color;
-import java.awt.Point;
 import necesse.level.gameTile.TerrainSplatterTile;
 import necesse.level.maps.Level;
 
-public class DarkGrassTile extends TerrainSplatterTile {
+import java.awt.*;
+
+public class CorruptGrassTile extends TerrainSplatterTile {
     private GameTexture texture;
     private final GameRandom drawRandom; // Used only in draw function
 
-    public DarkGrassTile() {
-        super(false, "darkgrass");
+    public CorruptGrassTile() {
+        super(false, "corruptgrass");
         canBeMined = true;
         drawRandom = new GameRandom();
         roomProperties.add("outsidefloor");
-        mapColor = new Color(42, 73, 27);
+        mapColor = new Color(30, 36, 50);
     }
 
     @Override
     protected void loadTextures() {
         super.loadTextures();
-        texture = GameTexture.fromFile("tiles/darkgrass");
+        texture = GameTexture.fromFile("tiles/corruptgrass");
     }
 
     @Override

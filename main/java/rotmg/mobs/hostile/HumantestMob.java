@@ -318,35 +318,35 @@
 
 package rotmg.mobs.hostile;
 
-import engine.Screen;
-import engine.modifiers.ModifierValue;
-import engine.seasons.GameSeasons;
-import engine.seasons.SeasonalHat;
-import engine.sound.SoundEffect;
-import engine.tickManager.TickManager;
-import engine.util.GameRandom;
-import entity.mobs.*;
-import entity.mobs.ai.behaviourTree.BehaviourTreeAI;
-import entity.mobs.buffs.BuffModifiers;
-import entity.mobs.hostile.HostileMob;
-import entity.particle.FleshParticle;
-import entity.particle.Particle.GType;
-import gfx.GameResources;
-import gfx.camera.GameCamera;
-import gfx.drawOptions.DrawOptions;
-import gfx.drawOptions.human.HumanDrawOptions;
-import gfx.drawables.OrderableDrawables;
-import gfx.gameTexture.GameTexture;
-import inventory.InventoryItem;
-import inventory.item.armorItem.ArmorItem.HairDrawMode;
-import inventory.lootTable.LootItemInterface;
-import inventory.lootTable.LootTable;
-import inventory.lootTable.lootItem.LootItem;
+import necesse.engine.Screen;
+import necesse.engine.modifiers.ModifierValue;
+import necesse.engine.seasons.GameSeasons;
+import necesse.engine.seasons.SeasonalHat;
+import necesse.engine.sound.SoundEffect;
+import necesse.engine.tickManager.TickManager;
+import necesse.engine.util.GameRandom;
+import necesse.entity.mobs.*;
+import necesse.entity.mobs.ai.behaviourTree.BehaviourTreeAI;
+import necesse.entity.mobs.buffs.BuffModifiers;
+import necesse.entity.mobs.hostile.HostileMob;
+import necesse.entity.particle.FleshParticle;
+import necesse.entity.particle.Particle.GType;
+import necesse.gfx.GameResources;
+import necesse.gfx.camera.GameCamera;
+import necesse.gfx.drawOptions.DrawOptions;
+import necesse.gfx.drawOptions.human.HumanDrawOptions;
+import necesse.gfx.drawables.OrderableDrawables;
+import necesse.gfx.gameTexture.GameTexture;
+import necesse.inventory.InventoryItem;
+import necesse.inventory.item.armorItem.ArmorItem.HairDrawMode;
+import necesse.inventory.lootTable.LootItemInterface;
+import necesse.inventory.lootTable.LootTable;
+import necesse.inventory.lootTable.lootItem.LootItem;
 import java.awt.Point;
 import java.awt.Rectangle;
 import java.util.List;
-import level.maps.Level;
-import level.maps.light.GameLight;
+import necesse.level.maps.Level;
+import necesse.level.maps.light.GameLight;
 import rotmg.mobs.ai.MeleeSwordChaserAI;
 
 public class HumantestMob extends HostileMob {
@@ -377,7 +377,7 @@ public class HumantestMob extends HostileMob {
         }
 
         this.ai = new BehaviourTreeAI(this, new MeleeSwordChaserAI(40, meleeDamage, 3000, 30000, baseTile));
-        this.hat = GameSeasons.getHat(new GameRandom((long)this.getUniqueID()));
+        this.hat = GameSeasons.getHat(new GameRandom(this.getUniqueID()));
     }
 
 
@@ -411,12 +411,12 @@ public class HumantestMob extends HostileMob {
     }
 
     public void playHitSound() {
-        float pitch = (Float)GameRandom.globalRandom.getOneOf(new Float[]{0.95F, 1.0F, 1.05F});
+        float pitch = GameRandom.globalRandom.getOneOf(new Float[]{0.95F, 1.0F, 1.05F});
         Screen.playSound(GameResources.crack, SoundEffect.effect(this).volume(1.6F).pitch(pitch));
     }
 
     protected void playDeathSound() {
-        float pitch = (Float)GameRandom.globalRandom.getOneOf(new Float[]{0.95F, 1.0F, 1.05F});
+        float pitch = GameRandom.globalRandom.getOneOf(new Float[]{0.95F, 1.0F, 1.05F});
         Screen.playSound(GameResources.crackdeath, SoundEffect.effect(this).volume(0.8F).pitch(pitch));
     }
 
@@ -471,7 +471,7 @@ public class HumantestMob extends HostileMob {
 
     // Melee Attack
     protected void addAttackDraw(HumanDrawOptions drawOptions, float attackProgress) {
-        drawOptions.itemAttack(new InventoryItem("cutlass"), (PlayerMob)null, attackProgress, this.attackDir.x, this.attackDir.y);
+        drawOptions.itemAttack(new InventoryItem("cutlass"), null, attackProgress, this.attackDir.x, this.attackDir.y);
     }
 
     public ModifierValue<?>[] getDefaultModifiers() {

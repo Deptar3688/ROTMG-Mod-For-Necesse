@@ -1,6 +1,6 @@
 package rotmg.items.swords;
 
-import inventory.item.toolItem.swordToolItem.CustomSwordToolItem;
+import necesse.inventory.item.toolItem.swordToolItem.CustomSwordToolItem;
 
 // Extends CustomSwordToolItem
 public class KnightOfOryxSword extends CustomSwordToolItem {
